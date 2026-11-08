@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+frontend/.next/
+frontend/out/
+
+# python
+backend/.venv/
+__pycache__/
+*.pyc
+
+# env & local
+.env
+.env.local
+frontend/.env.local
+backend/.env
+
+# misc
+.DS_Store
+*.log
+
+# build artifacts
+*.tsbuildinfo

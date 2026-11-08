@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mysolar
+      POSTGRES_PASSWORD: mysolar
+      POSTGRES_DB: mysolar
+    ports:
+      - "5432:5432"
+    volumes:
+      - mysolar_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mysolar -d mysolar"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mysolar_pgdata:
